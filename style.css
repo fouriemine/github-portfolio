@@ -9,10 +9,10 @@
     font-family: "Poppins", sans-serif;
 }
 :root {
-    --bg-color: #DDF2D1;
-    --second-bg-color: white;
-    --text-color: #3a4c40;
-    --main-color: #e7d1ff;
+    --bg-color: #f0fff1;
+    --second-bg-color: #5603ad;
+    --text-color: #8367c7;
+    --main-color: #b3e9c7;
 
 }
 
@@ -117,10 +117,11 @@ span{
     position: relative;
     top: 3rem;
     width: 32vw;
+    -webkit-border-radius: 5px;
     border-radius: 50%;
-    box-shadow: 0 0 25px var(--main-color);
+    /*box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
-    transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;*/
 }
 .home-img img:hover{
     box-shadow:  0 0 25px var(--main-color),
@@ -146,4 +147,120 @@ span{
     color: var(--main-color);
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease-in-out;
+
+}
+.social-icons a:hover{
+    color: var(--text-color);
+    transform: scale(1.3)translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25 px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    border: 2px solid transparent;
+    letter-spacing: 0.1;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.btn-group{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.btn-group a:nth-of-type(2){
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+}
+.btn-group a:nth-of-type(2):hover{
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    color: black;
+}
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content: "Web Developer";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    0%,
+    20%{
+        content: "Software Developer";
+    }
+    21%,
+    40%{
+        content: "Capitec Bursar";
+    }
+    41%,
+    60%{
+        content: "Final Year Student";
+    }
+    61%,
+    80%{
+        content: "Female in STEM";
+    }
+    81%,
+    100%{
+        content: "94% Averager";
+    }
+}
+@keyframes typing{
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
 }
