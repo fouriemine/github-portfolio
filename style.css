@@ -269,12 +269,13 @@ span{
     text-align: center;
     margin: 5rem 0;
 }
-.education{
+.resume{
     padding: 100px 15px;
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
-.education h2{
+.resume h2{
     margin-bottom: 5rem;
+    text-align: center;
 }
 .timeline-items{
     max-width: 1200px;
@@ -363,11 +364,28 @@ span{
 
 .skills{
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     padding: 0 20px;
     align-items: center;
+    background: var(--bg-color);
+    /* */
+    margin: 0 auto;
 }
-
+.skilss h2{
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.skill{
+    align-items: left;
+    width: 100%;
+    position: relative;
+    left: 10%;
+}
 .skill-name{
     font-size: 18px;
     font-weight: 700;
@@ -394,12 +412,13 @@ span{
     content: attr(per);
     position: absolute;
     padding: 4px 6px;
-    background: var(--second-bg-color);
+    background: var(--text-color);
     border-radius: 4px;
     font-size: 12px;
     top: -35px;
     right: 0;
     transform: translateX(50%);
+    color: var(--bg-color);
 }
 
 .skill-per::after{
@@ -407,7 +426,7 @@ span{
     position: absolute;
     width: 10px;
     height: 10px;
-    background: var(--second-bg-color);
+    background: var(--text-color);
     top: -20px;
     right: 0;
     transform: translateX(50%) rotate(45deg);
