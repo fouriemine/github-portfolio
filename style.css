@@ -365,7 +365,7 @@ span{
 .skills{
     width: 100%;
     max-width: 800px;
-    padding: 0 20px;
+    padding: 100px 15px;
     align-items: center;
     background: var(--bg-color);
     /* */
@@ -386,6 +386,17 @@ span{
     position: relative;
     left: 10%;
 }
+/**/
+.skills-columns{
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+.column{
+    flex: 1; /*columns take equal width*/
+    margin-bottom: 20px;
+    flex-direction: column;
+}
 .skill-name{
     font-size: 18px;
     font-weight: 700;
@@ -395,13 +406,15 @@ span{
 }
 
 .skill-bar{
-    height: 14px;
+    height: 20px;
+    width: 100%;
     background: var(--main-color);
     border-radius: 3px;
+    position: relative;
 }
 
 .skill-per{
-    height: 14px;
+    height: 100%;
     background: var(--text-color);
     border-radius: 3px;
     position: relative;
@@ -441,6 +454,59 @@ span{
         width: 100%;
     }
 }
+
+.services{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+.services h2{
+    margin-bottom: 5rem;
+    color: white;
+}
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+.service-box{
+    background-color: var(--main-color);
+    height: 300px;
+    border-radius: 3rem;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.service-box:hover{
+    background: var(--bg-color);
+    color: var(--second-bg-color);
+    border: 5px solid var(--main-color);
+    transform: scale(1.03);
+}
+.service-box .service-info{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-height: 200px;
+    justify-content: left;
+    align-items: baseline;
+    padding: 5rem 5rem;
+}
+.service-info h4{
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 2;
+}
+.service-info p{
+    font-size: 1.6rem;
+    font-weight: 600;
+    max-height: 100px;
+    line-height: 1.7;
+    margin: auto;
+}
+
+
+
 /* Make sure that padding behaves as expected 
 * {box-sizing:border-box}
 
