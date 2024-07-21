@@ -19,11 +19,16 @@
 html{
     font-size: 60%;
     overflow-x: hidden;
-
+    box-sizing: border-box;
 }
 body{
     background: var(--bg-color);
     color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    /*box-shadow: inset 0 0 0 30px white;*/
+    box-sizing: border-box;
+    border: 20px solid white;
 }
 .header{
     position: fixed;
@@ -268,6 +273,58 @@ span{
     font-size: 8rem;
     text-align: center;
     margin: 5rem 0;
+}
+.about{
+    min-height: 100vh;
+    width: 100%;
+    padding: 78px 0px;
+    background-color: var(--bg-color);
+}
+.about img{
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 5px var(--main-color),
+                0 0 25px var(--main-color);
+    height: auto;
+    width: 50%;
+    border-radius: 5em;
+    transition: 0.5s ease;
+    margin-right: 30px;
+    
+}
+.about img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.main{
+    width: 1200px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.about-text h1{
+    color: var(--text-color);
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+.about-text h5{
+    color: var(--second-bg-color);
+    font-size: 28px;
+    text-transform: 25px;
+    margin-bottom: 0.4em;
+    margin-left: 30px;
+}
+.about-text p{
+    color: var(--text-color);
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+    margin-left: 30px;
+    text-align: justify;
 }
 .resume{
     padding: 100px 15px;
@@ -531,7 +588,7 @@ span{
     padding: 2.5rem;
     font-size: 1.8rem;
     color: var(--text-color);
-    background: var(--second-bg-color);
+    background: var(--bg-color);
     border-radius: 2rem;
     border: 2px solid var(--main-color);
     margin: 1.5rem 0;
@@ -545,7 +602,7 @@ span{
     bottom: 0;
     width: 100%;
     padding: 40px 0;
-    background-color: var(--second-bg-color);
+    background-color: var(--text-color);
 }
 .footer .social{
     text-align: center;
@@ -568,7 +625,7 @@ span{
 .footer .social a:hover{
     transform: scale(1.2)translateY(-10px);
     background-color: var(--main-color);
-    color: black;
+    color: var(--second-bg-color);
     box-shadow:  0 0 25px var(--main-color);
 }
 .footer ul{
@@ -608,6 +665,9 @@ span{
         grid-template-columns: repeat(2,1fr);
         margin: 0 5rem;
     }
+    body{
+        border: 15px solid white;
+    }
 }
 
 @media (max-width:991px) {
@@ -642,6 +702,9 @@ span{
     }
     .footer{
         padding: 2rem 3%;
+    }
+    body{
+        border: 10px solid white;
     }
 
 }
@@ -695,10 +758,13 @@ span{
     .services-container{
         grid-template-columns: repeat(1,1fr);
     }
+    body{
+        border: 5px solid white;
+    }
 }
 
 
-/* Make sure that padding behaves as expected 
+/*Make sure that padding behaves as expected 
 * {box-sizing:border-box}
 
 /* Container for skill bars 
@@ -717,7 +783,7 @@ span{
 .html {width: 90%; background-color: #04AA6D;} /* Green */
 
 
-/* ----------------------------------------------------------------------------- 
+/*-----------------------------------------------------------------------------*/ 
 
 .girl-with-curly-hair {
     position: relative;
@@ -732,7 +798,7 @@ span{
     left: 50%;
     width: 60px;
     height: 60px;
-    background-color: #FDD7B7; /* Skin color 
+    background-color: #FDD7B7; /* Skin color */
     border-radius: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -744,7 +810,7 @@ span{
     left: 50%;
     width: 80px;
     height: 80px;
-    background-color: #3C1C07; /* Hair color 
+    background-color: #3C1C07; /* Hair color */
     border-radius: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -758,7 +824,7 @@ span{
     top: 10px;
     width: 30px;
     height: 30px;
-    background-color: #3C1C07; /* Hair color 
+    background-color: #3C1C07; /* Hair color */
     border-radius: 50%;
     z-index: 2;
 }
@@ -815,4 +881,3 @@ span{
     z-index: 0;
 }
 
-*/

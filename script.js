@@ -23,3 +23,29 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
+
+//CHARACTER ANIMATION
+
+document.addEventListener('mousemove',function(event) {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    const eyes = document.getElementById('eyes');
+    const face = document.getElementById('face');
+
+    //Get the SVG elements and its bounding rectangle
+    const svg = document.querySelector('svg');
+    const svgRect = svg.getBoundingClientRect();
+
+    //calculate the center of the svg viewport
+    const svgCenterX = svgRect.width / 2;
+    const svgCenterY = svgRect.height / 2;
+
+    //calc the movement ratios based on the mouse position
+    const moveX = (mouseX - svgRect.left - svgCenterX) / svgCenterX;
+    const moveY = (mouseY - svgRect.top - svgCenterY) / svgCenterY;
+
+    //apply trannsformations to eyes and face layers
+    eyes.style.transform = `translate(${moveX * 15}px, ${moveY * 15}px)`;
+    face.style.transform = `translate(${moveX * 10}px, ${moveY * 10}px)`;
+});
