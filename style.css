@@ -9,20 +9,26 @@
     font-family: "Poppins", sans-serif;
 }
 :root {
-    --bg-color: #f0fff1;
-    --second-bg-color: #5603ad;
-    --text-color: #8367c7;
+    --bg-color: #F7F7F7; /* #EFFFF6; /*#f0fff1;*/
+    --second-bg-color:#8367c7; /* #5603ad; */
+    --text-color: #31493C ;
     --main-color: #b3e9c7;
 
 }
-
+/*
+.content{
+    width: 90%;
+    height: 90%;
+    background-color: var(--bg-color);
+    box-shadow: 0 0 0 10px white;
+}*/
 html{
     font-size: 60%;
     overflow-x: hidden;
     box-sizing: border-box;
 }
 body{
-    background: var(--bg-color);
+    background: var(--bg-color); /* bg color*/
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -73,7 +79,7 @@ body{
     color: var(--main-color);
     border-bottom: 3px solid var(--main-color);
 }
-#menuicon{
+#menu-icon{
     font-size: 3.6rem;
     color: var(--main-color);
     display: none;
@@ -86,7 +92,7 @@ section{
 .home{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 15rem;
 }
 .home-content{
@@ -618,9 +624,25 @@ svg{
     margin: 1.5rem 0;
     resize: none;
 }
+.contact-input:focus{
+    border: 2px solid var(--text-color);
+}
+
 .contact form .btn{
     margin-top: 2rem;
 }
+
+/*\\
+.contact-inputs{
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: var(white);
+    border-radius: 50px;
+}*/
 .footer{
     position: relative;
     bottom: 0;
@@ -775,6 +797,9 @@ svg{
     }
     .home-img img{
         width: 56vw;
+    }
+    .about{
+        
     }
     .services h2{
         margin-bottom: 3rem;
