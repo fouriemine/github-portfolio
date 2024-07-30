@@ -36,6 +36,35 @@ body{
     box-sizing: border-box;
     border: 20px solid white;
 }
+/* ------ new for about me vertical scrolling ------*/
+.sticky_parent{
+    height: 500vh;
+}
+.sticky{
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    border: 1px solid red;
+}
+.scroll_section{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 500vw;
+    will-change: transform;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+}
+img{
+    width: 400px;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+/*END*/
 .header{
     position: fixed;
     top: 0;
@@ -862,9 +891,7 @@ svg{
     .home-img img{
         width: 56vw;
     }
-    .about{
 
-    }
     .services h2{
         margin-bottom: 3rem;
     }
