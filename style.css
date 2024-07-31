@@ -45,7 +45,6 @@ body{
     position: sticky;
     top: 0;
     height: 100vh;
-    border: 1px solid red;
 }
 .scroll_section{
     position: absolute;
@@ -54,15 +53,35 @@ body{
     width: 500vw;
     will-change: transform;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 5vw;
+    
 }
 img{
+    padding-top: 90px;
+    padding-right: 90px;
     width: 400px;
     height: 80%;
     object-fit: cover;
-    object-position: center;
+    object-position: center;   
+}
+/*
+.about-img img:first-of-type {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+}*/
+.about_container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+}
+.item-1 {
+    grid-column: span 4;
+}
+.about_grid_item {
+    grid-column: 4;
 }
 /*END*/
 .header{
@@ -341,20 +360,22 @@ svg{
     background-color: var(--bg-color);
 }
 .about img{
-    border: 2px solid var(--main-color);
-    box-shadow: 0 0 5px var(--main-color),
-                0 0 25px var(--main-color);
+    
     height: auto;
     width: 50%;
-    border-radius: 5em;
+    /*border-radius: 5em;
     transition: 0.5s ease;
     margin-right: 30px;
-    
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 5px var(--main-color),
+                0 0 25px var(--main-color);*/
 }
+/*
 .about img:hover{
     transform: scale(1.05);
     box-shadow: 0 0 25px var(--main-color);
 }
+*/
 .main{
     width: 1200px;
     max-width: 95%;
@@ -377,7 +398,7 @@ svg{
     border-radius: 5px;
 }
 .about-text{
-    grid-column: span 1;
+    grid-column: span 4;
 }
 
 
@@ -1036,21 +1057,24 @@ svg{
 }
 .grid-item {
     background-color: var(--bg-color);
-    border: 5px solid var(--main-color);
-    border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.2s;
+    /*border: 5px solid var(--main-color);
+    border-radius: 8px;
+    
+    transition: transform 0.2s;*/
 }
 .grid-item img{
     width: 100%;
-    height: auto;
+    height: 80%;
     display: block;
+    padding-top: 80px;
     
 }
+/*
 .grid-item:hover{
     transform: scale(1.05);
     box-shadow: 0 0 25px var(--main-color);
-}
+}*/
 .grid-item a{
     text-decoration: none;
     color: inherit;
