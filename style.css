@@ -37,6 +37,65 @@ body{
     border: 20px solid white;
 }
 /* ------ new for about me vertical scrolling ------*/
+
+.slide {
+    height: 100vh;
+    width: 100vw;
+}
+
+.slide:nth-child(1){
+    background-color: var(--second-bg-color);
+}
+.slide:nth-child(2){
+    background-color: var(--bg-color);
+}
+.wrapper {
+    display: flex;
+    width: 200vw;
+    transform: rotate(90deg) translateX(-100vh);
+    transform-origin: top left;
+    background-color: var(--bg-color);
+}
+.container {
+    height: 100vw;
+    width: 100vh;
+    transform: rotate(-90deg) translateX(-100vh);
+    transform-origin: top left;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.layer {
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-position: bottom;
+    background-size: cover;
+}
+.l1 {
+    background-image: url(image1.png);
+}
+.l2 {
+    background-image: url(image2.jpeg);
+}
+.l3 {
+    background-image: url(image1.jpg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .sticky_parent{
     height: 500vh;
 }
@@ -160,6 +219,8 @@ section{
     align-items: baseline;
     margin-top: 10rem;
     padding: 10px;
+    padding-top: 30vh;
+    
 }
 span{
     color: var(--main-color);
@@ -394,7 +455,8 @@ svg{
 }
 .grid-item img{
     max-width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: 5px;
 }
 .about-text{
@@ -564,13 +626,17 @@ svg{
 }
 
 .skills{
-    width: 100%;
-    max-width: 800px;
-    padding: 100px 15px;
+    width: 80%;
+    /*max-width: 800px;*/
+    /*padding: 100px 15px;*/
     align-items: center;
     background: var(--bg-color);
     /* */
     margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .skilss h2{
     text-align: center;
@@ -585,13 +651,15 @@ svg{
     align-items: left;
     width: 100%;
     position: relative;
-    left: 10%;
+    /*left: 10%;*/
 }
 /**/
 .skills-columns{
     display: flex;
     gap: 80px;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 .column{
     flex: 1; /*columns take equal width*/
@@ -659,29 +727,37 @@ svg{
 .services{
     background: var(--bg-color);
     color: var(--text-color);
+    width: 100vw;
+    margin: 0 auto;
 }
 .services h2{
     margin-bottom: 5rem;
-    color: white;
+    color: var(--text-color);
 }
 .services-container{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
-    gap: 2.5rem;
+    gap: 4rem;
+    width: 90%;
+    margin: 0 auto;
 }
 .service-box{
-    background-color: var(--main-color);
+    background-color: var(--bg-color);
     height: 300px;
     border-radius: 3rem;
-    border: 5px solid transparent;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
     transition: 0.4s ease-in-out;
+    padding: 1.5rem;
+    width: 100%;
 }
 .service-box:hover{
     background: var(--bg-color);
-    color: var(--second-bg-color);
-    border: 5px solid var(--main-color);
+    color: var(--text-color);
+    border: 4px solid var(--main-color);
+    box-shadow: 0 0 40px var(--main-color);
     transform: scale(1.03);
 }
 .service-box .service-info{
@@ -697,6 +773,7 @@ svg{
     font-size: 3rem;
     font-weight: 800;
     line-height: 2;
+    color: var(--second-bg-color);
 }
 .service-info p{
     font-size: 1.6rem;
@@ -705,6 +782,10 @@ svg{
     line-height: 1.7;
     margin: auto;
 }
+
+/*PROJECTS*/
+
+
 .contact{
     background-color: var(--bg-color);
 }
@@ -1041,13 +1122,27 @@ svg{
     transform: translateX(-50%);
     z-index: 0;
 }
+
+
+/*--------------PROJECTS*/
+.projects{
+    padding: 100px 15px;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .grid-container {
     display: grid;
     /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;*/
-    padding: 16px;
     width: 100%;
-    max-width: 1200px;
+    height: auto;
+    
+    /*padding: 16px;
+    max-width: 1200px;*/
+
     box-sizing: border-box;
     align-content: center;
 
@@ -1058,25 +1153,59 @@ svg{
 .grid-item {
     background-color: var(--bg-color);
     overflow: hidden;
-    /*border: 5px solid var(--main-color);
+    border: 5px solid var(--main-color);
     border-radius: 8px;
     
-    transition: transform 0.2s;*/
+    transition: transform 0.2s;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: auto;
 }
 .grid-item img{
-    width: 100%;
-    height: 80%;
-    display: block;
+    width: 100px;
+    height: auto;
+    /*display: block;
     padding-top: 80px;
+    object-fit: ;*//
     
 }
-/*
+
+.grid-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--text-color); /* semi-transparent black */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.grid-item:hover .overlay {
+    opacity: 0.8;
+}
+
+.overlay-text {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+}
+
 .grid-item:hover{
     transform: scale(1.05);
     box-shadow: 0 0 25px var(--main-color);
-}*/
+}
 .grid-item a{
     text-decoration: none;
     color: inherit;
     display: block;
+    width: 100%;
+    height: 100%;
 }
