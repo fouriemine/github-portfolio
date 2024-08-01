@@ -768,14 +768,17 @@ svg{
     color: var(--text-color);
 }
 .services-container{
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
     gap: 4rem;
     width: 90%;
     margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 .service-box{
+    flex: 1 1 calc(50% - 1rem);
     background-color: var(--bg-color);
     height: 300px;
     border-radius: 3rem;
@@ -783,8 +786,11 @@ svg{
     box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
     transition: 0.4s ease-in-out;
-    padding: 1.5rem;
+    padding: 1rem;
     width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 .service-box:hover{
     background: var(--bg-color);
@@ -807,13 +813,15 @@ svg{
     font-weight: 800;
     line-height: 2;
     color: var(--second-bg-color);
+    margin-top: 0;
 }
 .service-info p{
     font-size: 1.6rem;
     font-weight: 600;
     max-height: 100px;
     line-height: 1.7;
-    margin: auto;
+    margin-bottom: 0;
+    flex-grow: 1;
 }
 
 /*PROJECTS*/
@@ -1114,6 +1122,14 @@ svg{
         width: 80%; /* Ensure it takes the full width */
         max-width: 100vw; /* Optional: Add a max-width to prevent overly wide content */
         margin: 0 auto; /* Center the container horizontally */
+    }
+    .grid-item {
+        height: auto; /* Allow height to adjust based on content */
+        padding-bottom: 10px; /* Adjust padding */
+        box-sizing: border-box; /* Ensure padding and border are included in the width */
+        padding-right: none;
+        padding-left: none;
+
     }
 }
 
