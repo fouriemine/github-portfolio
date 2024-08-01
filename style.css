@@ -97,7 +97,7 @@ body{
 
 
 .sticky_parent{
-    height: 200vh;
+    height: 150vh;
 }
 .sticky{
     overflow: hidden;
@@ -109,19 +109,20 @@ body{
     position: absolute;
     top: 0;
     height: 100%;
-    width: calc(100vw * 4);
+    width: calc(100vw * 2);
     will-change: transform;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 5vw;
     
 }
-img{
-    padding-top: 90px;
-    padding-right: 90px;
-    width: 400px;
+.scroll_section img{
+    padding-top: 100px;
+    padding-right: 10px;
+    /*width: 400px;*/
     height: 80%;
+    width: auto;
     object-fit: cover;
     object-position: center;   
 }
@@ -419,6 +420,12 @@ svg{
     width: 100%;
     padding: 78px 0px;
     background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    /*justify-items: center;*/
+    text-align: center;
+    align-items: center;
+
 }
 .about img{
     
@@ -460,10 +467,23 @@ svg{
     object-fit: cover;
     border-radius: 5px;
 }
-.grid-item .about-text{
+.grid-item.about-text-item{
     max-width: 80%;
+    border: none;
+    transition: none;
 }
-.about-text{
+.about-text-item{
+
+    color: var(--second-bg-color);
+    font-size: 28px;
+    text-transform: 25px;
+    margin-bottom: 0.4em;
+    /*margin-left: 30px;*/
+    justify-items: center;
+    text-align: center; /* Center the text */
+    width: 100%; /* Ensure the element takes the full width of the parent */
+
+
     max-width: 80%;
 }
 
@@ -498,9 +518,11 @@ svg{
     font-size: 28px;
     text-transform: 25px;
     margin-bottom: 0.4em;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
+    justify-items: center;
+    text-align: center;
 }
-.about-text p{
+.about-text-item p{
     color: var(--text-color);
     letter-spacing: 1px;
     line-height: 28px;
@@ -508,6 +530,10 @@ svg{
     margin-bottom: 45px;
     margin-left: 30px;
     text-align: justify;
+}
+.about-text-item {
+    border: none;
+    transition: none;
 }
 .resume{
     padding: 100px 15px;
@@ -1142,12 +1168,12 @@ svg{
     /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;*/
     width: 100%;
-    height: auto;
+    /*height: auto;
     
-    /*padding: 16px;
-    max-width: 1200px;*/
+    padding: 16px;
+    max-width: 1200px;
 
-    box-sizing: border-box;
+    box-sizing: border-box;*/
     align-content: center;
 
     grid-template-columns: repeat(2,1fr);
@@ -1157,8 +1183,7 @@ svg{
 .grid-item {
     background-color: var(--bg-color);
     overflow: hidden;
-    border: 5px solid var(--main-color);
-    border-radius: 8px;
+    
     
     transition: transform 0.2s;
     position: relative;
@@ -1169,12 +1194,13 @@ svg{
     height: auto;
 }
 .grid-item img{
-    width: 100px;
-    height: auto;
+    width: 100%;
+    height: 100%;
     /*display: block;
-    padding-top: 80px;
-    object-fit: ;*//
-    
+    padding-top: 80px;*/
+    object-fit: cover;
+    border: 5px solid var(--main-color);
+    border-radius: 5px;
 }
 
 .grid-item .overlay {
@@ -1192,12 +1218,12 @@ svg{
 }
 
 .grid-item:hover .overlay {
-    opacity: 0.8;
+    opacity: 0.95;
 }
 
 .overlay-text {
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     padding: 1rem;
 }
@@ -1206,6 +1232,17 @@ svg{
     transform: scale(1.05);
     box-shadow: 0 0 25px var(--main-color);
 }
+
+.grid-item.about-text-item:hover{
+    border: none;
+    box-shadow: none;
+    transition: none;
+    transform: none;
+    /*transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);*/
+}
+
+
 .grid-item a{
     text-decoration: none;
     color: inherit;

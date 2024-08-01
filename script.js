@@ -51,35 +51,31 @@ document.addEventListener('mousemove',function(event) {
 });
 
 //Horizontal scrolling code starts
-const stickySections = [...document.querySelectorAll('.sticky')]
+const stickySections = [...document.querySelectorAll('.sticky')];
 let images = [
     'image1.jpg',
-    'image2.jpeg',
-    'image1.jpg',
-    'image2.jpeg',
-    'image1.jpg',
-    'image2.jpeg',
-    'image1.jpg',
-    'image2.jpeg'
-]
+    'faith.jpg', //Image by rawpixel.com on Freepik
+    'extraclass.jpeg',
+    'image1.jpg'
+];
 
 images.forEach(img => {
     stickySections.forEach(section => {
         let image = document.createElement('img');
         image.src = img;
-        section.querySelector('.scroll_section').appendChild(image)
-    })
+        section.querySelector('.scroll_section').appendChild(image);
+    });
 });
 
-window.addEventListener('scroll', (e) => {
+window.addEventListener('scroll', () => {
     for(let i = 0; i< stickySections.length; i++) {
-        transform(stickySections[i])
+        transform(stickySections[i]);
     }
 });
 
 function transform(section){
     const offsettTop = section.parentElement.offsetTop;
-    const scrollSection = section.querySelector('.scroll_section')
+    const scrollSection = section.querySelector('.scroll_section');
     let percentage = ((window.scrollY - offsettTop) / window.innerHeight) * 100;
 
 
@@ -87,5 +83,5 @@ function transform(section){
     //scrollSection.style.transform = `translateX(${-(percentage * (scrollSection.offsetWidth / window.innerWidth - 1))}px)`;
 
     //percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage;
-    scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
+    scrollSection.style.transform = `translate3d(${-(percentage * (images.length - 1))}vw, 0, 0)`;
 };
