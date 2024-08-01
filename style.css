@@ -109,7 +109,7 @@ body{
     position: absolute;
     top: 0;
     height: 100%;
-    width: calc(100vw * 2);
+    width: calc(100vw * 4); /*was 2*/
     will-change: transform;
     display: flex;
     justify-content: flex-start;
@@ -189,7 +189,7 @@ body{
 }
 #menu-icon{
     font-size: 3.6rem;
-    color: var(--main-color);
+    color: var(--text-color);
     display: none;
 }
 
@@ -415,7 +415,7 @@ svg{
     margin: 5rem 0;
 }
 .about{
-
+    margin-top: 80vh;
     min-height: 100vh;
     width: 100%;
     padding: 78px 0px;
@@ -425,7 +425,10 @@ svg{
     /*justify-items: center;*/
     text-align: center;
     align-items: center;
-
+    align-content: center;
+}
+.about h2{
+    margin-top: 5rem;
 }
 .about img{
     
@@ -999,6 +1002,11 @@ svg{
     .navbar.active{
         display: block;
     }
+    .navbar a:hover,
+    .navbar a.active{
+        color: var(--text-color);
+        border-bottom: 3px solid var(--text-color);
+    }
     .navbar a{
         display: block;
         font-size: 2rem;
@@ -1024,14 +1032,88 @@ svg{
         width: 56vw;
     }
 
+    .skills-columns {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: flex-start;
+    }
+    .column {
+        flex: none;
+        margin: 0;
+        padding: 0;
+        width: 70vw;
+    }
+    .skill-bar {
+        width: 100%;
+    }
+    /* OU SERVICES
     .services h2{
         margin-bottom: 3rem;
     }
     .services-container{
         grid-template-columns: repeat(1,1fr);
+    }*/
+
+    .services {
+        padding: 2rem 1rem; /* Adjust padding for smaller screens */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the content horizontally */
     }
+
+    .services-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        gap: 4rem; /* Adjust gap between items */
+        width: 80%; /* Ensure it takes the full width */
+        max-width: 100vw; /* Optional: Add a max-width to prevent overly wide content */
+        margin: 0 auto; /* Center the container horizontally */
+    }
+
+    .service-box {
+        height: auto; /* Allow height to adjust based on content */
+        padding-bottom: 10px; /* Adjust padding */
+        box-sizing: border-box; /* Ensure padding and border are included in the width */
+        padding-right: none;
+        padding-left: none;
+    }
+
+    .service-info {
+        padding: none; /* Adjust padding inside service-info */
+        text-align: center; /* Center text for smaller screens */
+        max-height: none; /* Remove any height constraints */
+    }
+
+    .service-info h4 {
+        font-size: 2.5rem; /* Adjust font size */
+        margin-bottom: 1rem; /* Adjust margin */
+        line-height: 1.2;
+    }
+
+    .service-info p {
+        font-size: 1.4rem; /* Adjust font size */
+    }
+    
     body{
         border: 5px solid white;
+    }
+
+    /*PROJECTS*/
+
+    .projects {
+        padding: 2rem 1rem; /* Adjust padding for smaller screens */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the content horizontally */
+    }
+    .grid-container {
+        display: flexbox;
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        gap: 4rem; /* Adjust gap between items */
+        width: 80%; /* Ensure it takes the full width */
+        max-width: 100vw; /* Optional: Add a max-width to prevent overly wide content */
+        margin: 0 auto; /* Center the container horizontally */
     }
 }
 
