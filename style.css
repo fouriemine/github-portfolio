@@ -970,8 +970,14 @@ svg{
     font-size: 16px;
     color: white;
 }
-
-@media(max-width:1285px){
+/*1285*/
+@media(max-width:1500px){
+    html, body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
     html{
         font-size: 55%;
     }
@@ -986,6 +992,12 @@ svg{
 }
 
 @media (max-width:991px) {
+    html, body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
     header{
         padding: 2rem 3%;
     }
@@ -1024,6 +1036,12 @@ svg{
 
 }
 @media(max-width:895px){
+    html, body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
     #menu-icon{
         display: block;
     }
@@ -1153,13 +1171,6 @@ svg{
     .skill-bar {
         width: 100%;
     }
-    /* OU SERVICES
-    .services h2{
-        margin-bottom: 3rem;
-    }
-    .services-container{
-        grid-template-columns: repeat(1,1fr);
-    }*/
 
     .services {
         padding: 2rem 1rem; /* Adjust padding for smaller screens */
@@ -1232,6 +1243,12 @@ svg{
 
     @media only screen and (max-width: 600px) {
 
+        html, body {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
         .container{
             padding: 1rem;
         }
@@ -1239,8 +1256,47 @@ svg{
             width: 90%;
         }
         img{
-            width: 100px;
+            width: 70px;
         }
+
+        .sticky_parent{
+            height: 200vh;
+        }
+        .sticky{
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+
+        }
+        .scroll_section{
+            position: relative;
+            top: 0;
+            height: 100%;
+            width: calc(100vw * 2); /*was 2*/
+            will-change: transform;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 5vw;
+            padding-right: 20px;
+            
+        }
+        
+        .scroll_section img{
+            padding-top: 0;
+            padding-left: 10px;
+            padding-right: 0;
+            /*width: 400px;*/
+            height: 70%;
+            width: auto; /*auto gewees*/
+            object-fit: cover;
+            object-position: center;   
+            padding-right: 30vw;
+        }
+
+
+
     }
 }
 
