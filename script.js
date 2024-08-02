@@ -99,7 +99,19 @@ function transform(section){
     const offsettTop = section.parentElement.offsetTop;
     const scrollSection = section.querySelector('.scroll_section');
     let percentage = ((window.scrollY - offsettTop) / window.innerHeight) * 100;
-    percentage = percentage < 0 ? 0 : percentage > 100 ? 100 : percentage;
+
+    if (window.innerWidth <= 895) {
+        percentage = percentage < 0 ? 0 : percentage > 500 ? 50 : percentage;
+        // Adjust for smaller screens
+    //    scrollSection.style.transform = `translate3d(${-percentage * (maxScroll / 100)}px)`;
+
+    } else {
+        percentage = percentage < 0 ? 0 : percentage > 100 ? 100 : percentage;
+        // Standard transformation for larger screens
+    //    scrollSection.style.transform = `translate3d(${-(percentage * (images.length - 1))}vw, 0, 0)`;
+    };
+    
+    
     scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
     //percentage = Math.max(0, Math.min(percentage, 100)); // Limit percentage to 0-100 range
     //scrollSection.style.transform = `translateX(${-(percentage * (scrollSection.offsetWidth / window.innerWidth - 1))}px)`;

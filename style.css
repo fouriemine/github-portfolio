@@ -1075,6 +1075,7 @@ svg{
     .home{
         flex-direction: column;
         gap: 3rem;
+        grid-template-columns: 1fr;
         /*
         flex-direction: column-reverse;
         margin: 5rem 4rem;
@@ -1082,16 +1083,19 @@ svg{
     }
     .svg-content{
         margin-top: 0;
+        margin-left: 30px;
         padding-top: 160px;
         padding-left: 120px;
         display: flex;
         justify-content: center;
         align-items: center;
+        align-content: center;
         width: 100%;
         height: auto;
     }
     .home-content, .svg-content{
         flex: none;
+        margin-bottom: 40px;
     }
 
 
@@ -1240,7 +1244,7 @@ svg{
         padding-left: none;
 
     }
-
+} 
     @media only screen and (max-width: 600px) {
 
         html, body {
@@ -1260,27 +1264,27 @@ svg{
         }
 
         .sticky_parent{
-            height: 200vh;
+            height: 100vh;
         }
         .sticky{
             overflow: hidden;
             position: sticky;
             top: 0;
             height: 100vh;
-
+            width: 100%;
         }
         .scroll_section{
             position: relative;
             top: 0;
             height: 100%;
-            width: calc(100vw * 2); /*was 2*/
+            width: calc(100vw * 4); /*was 2*/
             will-change: transform;
             display: flex;
             justify-content: flex-start;
             align-items: center;
             padding: 0 5vw;
-            padding-right: 20px;
-            
+            padding-right: 10px;
+            box-sizing: border-box;
         }
         
         .scroll_section img{
@@ -1298,7 +1302,7 @@ svg{
 
 
     }
-}
+
 
 
 /*Make sure that padding behaves as expected 
