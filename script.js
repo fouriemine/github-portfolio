@@ -50,13 +50,31 @@ document.addEventListener('mousemove',function(event) {
     face.style.transform = `translate(${moveX * 10}px, ${moveY * 10}px)`;
 });
 
+/*
+window.addEventListener('scroll', () => {
+    const horizontalScrollSection = document.querySelector('.horizontal-scroll-section');
+    if (horizontalScrollSection) {
+        const rect = horizontalScrollSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            const horizontalScroll = horizontalScrollSection.querySelector('.horizontal-scroll');
+            const container = horizontalScroll.querySelector('.scroll-container');
+            const sectionHeight = horizontalScrollSection.offsetHeight;
+            const scrollY = window.scrollY - horizontalScrollSection.offsetTop;
+            const maxScroll = container.scrollWidth - window.innerWidth;
+            const scrollPercentage = Math.min(scrollY / (sectionHeight - window.innerHeight), 1);
+            container.style.transform = `translateX(${-scrollPercentage * maxScroll}px)`;
+        }
+    }
+});*/
+
+//OU REGTE DEEL
 //Horizontal scrolling code starts
 const stickySections = [...document.querySelectorAll('.sticky')];
 let images = [
     'image1.jpg',
     'faith.jpg', //Image by rawpixel.com on Freepik
     'extraclass.jpeg',
-    'image1.jpg'
+    'typing.jpeg'
 ];
 
 images.forEach(img => {
@@ -67,20 +85,16 @@ images.forEach(img => {
     });
 });
 
+
+
+
 window.addEventListener('scroll', () => {
-    stickySections.forEach(section => {
-        transform(section);
-    });
+    for(let i = 0; i< stickySections.length; i++) {
+        transform(stickySections[i]);
+    }
 });
 
-//OU REGTE DEEL
-//window.addEventListener('scroll', () => {
-//    for(let i = 0; i< stickySections.length; i++) {
-//        transform(stickySections[i]);
-//    }
-//});
-
-/*function transform(section){
+function transform(section){
     const offsettTop = section.parentElement.offsetTop;
     const scrollSection = section.querySelector('.scroll_section');
     let percentage = ((window.scrollY - offsettTop) / window.innerHeight) * 100;
@@ -90,8 +104,43 @@ window.addEventListener('scroll', () => {
     //scrollSection.style.transform = `translateX(${-(percentage * (scrollSection.offsetWidth / window.innerWidth - 1))}px)`;
 
     //percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage;
-    scrollSection.style.transform = `translate3d(${-(percentage * (images.length - 1))}vw, 0, 0)`;
-};*/
+    //scrollSection.style.transform = `translate3d(${-(percentage * (images.length - 1))}vw, 0, 0)`;
+
+    // Check screen width and apply different transformation if width is 895px or less
+    if (window.innerWidth <= 895) {
+        // Adjust for smaller screens
+        scrollSection.style.transform = `translate3d(${-percentage * (imageWidth / 100)}px)`;
+    } else {
+        // Standard transformation for larger screens
+        scrollSection.style.transform = `translate3d(${-(percentage * (images.length - 1))}vw, 0, 0)`;
+    }
+};
+
+
+
+//REGTE DEEL KLAAR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+window.addEventListener('scroll', () => {
+    stickySections.forEach(section => {
+        transform(section);
+    });
+});
 
 
 function transform(section) {
@@ -106,3 +155,4 @@ function transform(section) {
     // Translate to account for scroll position and width of images
     scrollSection.style.transform = `translateX(${-percentage * maxScroll / 100}px)`;
 };
+*/

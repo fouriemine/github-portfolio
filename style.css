@@ -84,12 +84,40 @@ body{
     background-image: url(image1.jpg);
 }
 
+/*NNUUUUUUUUUUUUUUUUUUUUUUUUUWEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE DEEEEEEEEEEEEEEEEEEEEEEEEEEEEL*/
+
+.section {
+    padding: 20px;
+    height: 100vh; /* Full viewport height */
+    box-sizing: border-box;
+}
+
+.horizontal-scroll-section {
+    height: 100vh; /* Ensure this section takes full viewport height */
+    position: relative;
+    overflow: hidden;
+}
+
+.horizontal-scroll {
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.scroll-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.2s ease-out;
+}
+
+.scroll-container img {
+    width: 100vw; /* Each image takes full viewport width */
+    height: auto;
+    display: block;
+}
 
 
-
-
-
-
+/*NNUUUUUUUUUUUUUUUUUUUUUUUUUWEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE DEEEEEEEEEEEEEEEEEEEEEEEEEEEEL klaaaaaaaaaaaaaaaaaaar*/
 
 
 
@@ -97,7 +125,7 @@ body{
 
 
 .sticky_parent{
-    height: 150vh;
+    height: 200vh;
 }
 .sticky{
     overflow: hidden;
@@ -106,10 +134,10 @@ body{
     height: 100vh;
 }
 .scroll_section{
-    position: absolute;
+    position: relative;
     top: 0;
     height: 100%;
-    width: calc(100vw * 4); /*was 2*/
+    width: calc(100vw * 2); /*was 2*/
     will-change: transform;
     display: flex;
     justify-content: flex-start;
@@ -125,6 +153,7 @@ body{
     width: auto;
     object-fit: cover;
     object-position: center;   
+    padding-right: 30vw;
 }
 /*
 .about-img img:first-of-type {
@@ -415,7 +444,7 @@ svg{
     margin: 5rem 0;
 }
 .about{
-    margin-top: 80vh;
+    margin-top: 0;
     min-height: 100vh;
     width: 100%;
     padding: 78px 0px;
@@ -426,6 +455,7 @@ svg{
     text-align: center;
     align-items: center;
     align-content: center;
+    
 }
 .about h2{
     margin-top: 5rem;
@@ -1022,9 +1052,29 @@ svg{
         color: var(--second-bg-color);
     }
     .home{
+        flex-direction: column;
+        gap: 3rem;
+        /*
         flex-direction: column-reverse;
         margin: 5rem 4rem;
+        */
     }
+    .svg-content{
+        margin-top: 0;
+        padding-top: 160px;
+        padding-left: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+    .home-content, .svg-content{
+        flex: none;
+    }
+
+
+
     .home-content h3{
         font-size: 2.6rem;
     }
@@ -1038,6 +1088,17 @@ svg{
     }
     .home-img img{
         width: 56vw;
+    }
+
+    .about-text-item {
+        text-align: center;
+        padding-left: none;
+        margin-left: none;
+        padding-right: 5vw;
+    }
+    .grid-item p{
+        text-align: center;
+        padding-right: 5vw;
     }
 
     .skills-columns {
