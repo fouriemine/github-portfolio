@@ -143,14 +143,17 @@ body{
     justify-content: flex-start;
     align-items: center;
     padding: 0 5vw;
+    padding-right: 20px;
     
 }
+
 .scroll_section img{
     padding-top: 100px;
-    padding-right: 10px;
+    padding-left: 10px;
+    padding-right: 0;
     /*width: 400px;*/
     height: 80%;
-    width: auto;
+    width: auto; /*auto gewees*/
     object-fit: cover;
     object-position: center;   
     padding-right: 30vw;
@@ -1090,6 +1093,40 @@ svg{
         width: 56vw;
     }
 
+    /* ABOUT ME */
+
+    .sticky_parent{
+        height: 200vh;
+    }
+    .sticky{
+        overflow: hidden;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+    .scroll_section{
+        position: relative;
+        top: 0;
+        height: 100%;
+        width: calc(100vw * 4); /*was 2*/
+        will-change: transform;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 2vw;
+        
+    }
+    .scroll_section img{
+        padding-top: 50px;
+        padding-right: 10vw;
+        /*width: 400px;*/
+        height: 80%;
+        width: auto;
+        object-fit: cover;
+        object-position: center;   
+        padding-right: 30vw;
+    }
+
     .about-text-item {
         text-align: center;
         padding-left: none;
@@ -1191,6 +1228,19 @@ svg{
         padding-right: none;
         padding-left: none;
 
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        .container{
+            padding: 1rem;
+        }
+        p{
+            width: 90%;
+        }
+        img{
+            width: 100px;
+        }
     }
 }
 

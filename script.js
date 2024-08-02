@@ -71,10 +71,10 @@ window.addEventListener('scroll', () => {
 //Horizontal scrolling code starts
 const stickySections = [...document.querySelectorAll('.sticky')];
 let images = [
-    'image1.jpg',
-    'faith.jpg', //Image by rawpixel.com on Freepik
-    'extraclass.jpeg',
-    'typing.jpeg'
+    'self1.jpg',
+    'faith1.jpg', //Image by rawpixel.com on Freepik
+    'extraclass1.jpeg',
+    'typing1.jpeg'
 ];
 
 images.forEach(img => {
@@ -94,6 +94,34 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
+function transform(section){
+    const offsettTop = section.parentElement.offsetTop;
+    const scrollSection = section.querySelector('.scroll_section');
+    let percentage = ((window.scrollY - offsettTop) / window.innerHeight) * 100;
+    percentage = percentage < 0 ? 0 : percentage > 100 ? 100 : percentage;
+    scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
+    //percentage = Math.max(0, Math.min(percentage, 100)); // Limit percentage to 0-100 range
+    //scrollSection.style.transform = `translateX(${-(percentage * (scrollSection.offsetWidth / window.innerWidth - 1))}px)`;
+
+    
+    //scrollSection.style.transform = `translate3d(${-(percentage * (images.length - 1))}vw, 0, 0)`;
+
+    //const sectionWidth = scrollSection.offsetWidth;
+    //const imageWidth = sectionWidth / images.length; // Calculate width per image
+    //const maxScroll = sectionWidth - window.innerWidth;
+
+    // Check screen width and apply different transformation if width is 895px or less
+    //if (window.innerWidth <= 895) {
+        // Adjust for smaller screens
+    //    scrollSection.style.transform = `translate3d(${-percentage * (maxScroll / 100)}px)`;
+    //} else {
+        // Standard transformation for larger screens
+    //    scrollSection.style.transform = `translate3d(${-(percentage * (images.length - 1))}vw, 0, 0)`;
+    //}
+};
+
+/* WERKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 function transform(section){
     const offsettTop = section.parentElement.offsetTop;
     const scrollSection = section.querySelector('.scroll_section');
@@ -106,15 +134,19 @@ function transform(section){
     //percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage;
     //scrollSection.style.transform = `translate3d(${-(percentage * (images.length - 1))}vw, 0, 0)`;
 
+    const sectionWidth = scrollSection.offsetWidth;
+    const imageWidth = sectionWidth / images.length; // Calculate width per image
+    const maxScroll = sectionWidth - window.innerWidth;
+
     // Check screen width and apply different transformation if width is 895px or less
     if (window.innerWidth <= 895) {
         // Adjust for smaller screens
-        scrollSection.style.transform = `translate3d(${-percentage * (imageWidth / 100)}px)`;
+        scrollSection.style.transform = `translate3d(${-percentage * (maxScroll / 100)}px)`;
     } else {
         // Standard transformation for larger screens
         scrollSection.style.transform = `translate3d(${-(percentage * (images.length - 1))}vw, 0, 0)`;
     }
-};
+};*/
 
 
 
